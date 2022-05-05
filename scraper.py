@@ -19,7 +19,7 @@ exclude_times_checkbox = driver.find_element(By.ID, "crit-custom-meeting-pattern
 exclude_times_checkbox.click()
 # Click on first cell to exclude that time
 WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.CLASS_NAME, "select-grid__block")))
-sleep(5)
+sleep(2)
 exclude_times_checkbox.send_keys(Keys.TAB)
 exclude_times_checkbox.send_keys(Keys.TAB)
 exclude_times_checkbox.send_keys(Keys.TAB)
@@ -30,7 +30,7 @@ WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.CLASS_NAME, "
 done_button = driver.find_element(By.CLASS_NAME, "meet-pat-btn-search")
 done_button.click()
 # Click "Find Courses" button to search
-# sleep(5)
+# sleep(2)
 WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "search-button")))
 search_button = driver.find_element(By.ID, "search-button")
 search_button.click()
@@ -66,15 +66,9 @@ for result in results:
 
     c.execute('INSERT INTO syllabi VALUES (?, ?, ?, ?, ?)',
         (course_code, department, course_number, course_title, syllabus_link))
-        
+
     print(course_code)
 
 conn.commit()
-
-
 conn.close()
 quit()
-
-
-
-
