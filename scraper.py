@@ -46,7 +46,7 @@ c = conn.cursor()
 # Delete tables if they exist
 c.execute('DROP TABLE IF EXISTS "syllabi";')
 
-# DONE: Create tables in the database and add data to it. REMEMBER TO COMMIT
+# Create table in the database and add data to it
 c.execute('''
     CREATE TABLE syllabi (
         course_code VARCHAR(255) NOT NULL PRIMARY KEY,
